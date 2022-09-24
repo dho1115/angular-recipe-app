@@ -6,8 +6,8 @@
 <hr />
 <div class="row">
   <div class="col-xs-12 bg-danger" [ngStyle]="{padding: '1%'}">
-      <app-recipe-item *ngFor="let item of recipes" [recipe] = item>
-      </app-recipe-item>
-    </div>
+    <app-recipe-item *ngFor="let recipeEl of recipes" [recipe] = recipeEl (recipeDetailEmitter) = "onReceiveRecipeDetail($event)">
+    </app-recipe-item>
+  </div>
 </div>
 
