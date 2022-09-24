@@ -8,7 +8,7 @@ import { Recipe } from '../../recipe.model'
 })
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe;
-  @Output() recipeDetailEmitter = new EventEmitter<Recipe>();
+  @Output() recipeSelected = new EventEmitter<void>();
 
   constructor() { }
 
@@ -20,9 +20,8 @@ export class RecipeItemComponent implements OnInit {
     console.log(`${JSON.stringify(this.recipe)} has been clicked!!!`);
   }
 
-  emitRecipe(recipe) {
-    this.recipeDetailEmitter.emit(recipe);
-    console.log(`${JSON.stringify(recipe)} has been emitted.`);
+  onSelected() {
+    this.recipeSelected.emit(); //We do not need to pass anything to emit because the Recipe instances are inside recipe list.
   }
 
 }

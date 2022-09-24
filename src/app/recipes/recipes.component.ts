@@ -6,16 +6,11 @@ import { Recipe } from '../recipes/recipe.model';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  receivedFromRecipesList: Recipe
+  selectedRecipe: Recipe;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  receivedFromRecipesListFunction(receivedRecipe: Recipe) {
-    this.receivedFromRecipesList = receivedRecipe;
-    console.log({ receivedFromRecipesList: this.receivedFromRecipesList })
   }
 
 }
