@@ -2,3 +2,7 @@
   background-color: whitesmoke;
   padding: 1%;
 }
+
+.addBorder {
+  border: 3.5px solid black;
+}
