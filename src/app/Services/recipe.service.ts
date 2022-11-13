@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 import { Recipe } from '../recipes/recipe.model';
 @Injectable({
@@ -6,6 +6,8 @@ import { Recipe } from '../recipes/recipe.model';
 })
 
 export class RecipeService {
+  recipeSelected = new EventEmitter<Recipe>();
+
   recipes: Recipe[] = [
     new Recipe('Monster Burger', 'Recipe for Monster Burger', 'https://www.happyfoodstube.com/wp-content/uploads/2020/10/halloween-monster-burgers-recipe.jpg'),
     new Recipe('Salmon Pasta', 'Delicious Salmon Pasta!!!', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-smoked-salmon-pasta-horizontal-1542310073.png?resize=480:*'),
