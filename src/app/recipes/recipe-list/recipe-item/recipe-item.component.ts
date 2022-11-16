@@ -22,7 +22,7 @@ export class RecipeItemComponent implements OnInit {
   }
 
   onSelected() {
-    console.log({recipe: this.recipe})
-    this.recipeService.recipeSelected.emit(this.recipe);
+    console.log({recipeItemRecipe: this.recipe})
+    this.recipeService.recipeSelected.emit(this.recipe); //This is where the recipe we "clicked" is emitted!
   }
 }
