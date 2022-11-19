@@ -20,9 +20,9 @@ export class ShoppingListComponent implements OnInit {
     })
   }
 
-  onIngredientAdded(ingredient:Ingredient) {
-    this.ingredients.push(ingredient);
-    console.log(`${ingredient} has been added.`)
-  }
+  // onIngredientAdded(ingredient:Ingredient) {
+  //   this.ingredients.push(ingredient);
+  //   console.log(`${ingredient} has been added.`)
+  // }
 
 }

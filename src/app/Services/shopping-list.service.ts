@@ -21,5 +21,5 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient)
-  }
+  } //replaces onIngredientAdded method in shopping-list.component.ts.
 }
