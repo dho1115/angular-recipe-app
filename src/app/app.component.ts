@@ -10,7 +10,7 @@ import { Recipe } from './recipes/recipe.model';
 
 export class AppComponent {
   title = 'recipe-app';
-  loadedFeature: string = 'recipea';
+  loadedFeature: string = 'recipe';
   recipeDetails: Recipe;
 
   onNavigate(feature: string) {

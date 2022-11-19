@@ -11,17 +11,11 @@ import { ShoppingListService } from '../Services/shopping-list.service';
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[];
 
-  // ingredients: Ingredient[] = [
-  //   new Ingredient('tuna', 7),
-  //   new Ingredient('pasta', 5),
-  //   new Ingredient('Iced Tea', 5)
-  // ];
-
-  constructor(private _shoppingListService: ShoppingListService) { }
+  constructor(private slService: ShoppingListService) { }
 
   ngOnInit(): void {
-    this.ingredients = this._shoppingListService.fetchIngredients();
-    this._shoppingListService.ingredientEmitter.subscribe((ingredient: Ingredient) => {
+    this.ingredients = this.slService.getIngredients();
+    this.slService.ingredientEmitter.subscribe((ingredient: Ingredient) => {
       this.ingredients = [...this.ingredients, ingredient];
     })
   }
