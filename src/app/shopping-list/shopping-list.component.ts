@@ -16,6 +16,8 @@ export class ShoppingListComponent implements OnInit {
   ngOnInit(): void {
     this.ingredients = this.slService.getIngredients();
     this.slService.ingredientsChanged.subscribe((ingredients: Ingredient[]) => {
+      console.log('slService.ingredientsChanged.subscribe has just emitted: ')
+      console.log({ ingredients })
       this.ingredients = ingredients;
 
       /* .subscribe allows us to listen to/track/retrieve any changes and updates.
@@ -30,7 +32,7 @@ export class ShoppingListComponent implements OnInit {
 
       this.ingredients = ingredients;
       */
-     
+
     })
   }
 }

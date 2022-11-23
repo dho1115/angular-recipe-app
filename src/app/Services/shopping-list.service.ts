@@ -1,19 +1,24 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, OnInit } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+
 @Injectable({
   providedIn: 'root'
 })
 
-export class ShoppingListService {
+export class ShoppingListService implements OnInit {
   ingredientsChanged = new EventEmitter<Ingredient[]>();
 
   private ingredients: Ingredient[] = [
-    new Ingredient('tuna', 7),
-    new Ingredient('pasta', 5),
-    new Ingredient('Iced Tea', 5)
+    new Ingredient('tuna', 7), //hard-coded test ingredient.
+    new Ingredient('pasta', 5), //hard-coded test ingredient.
+    new Ingredient('Iced Tea', 5) //hard-coded test ingredient.
   ];
 
   constructor() { }
+
+  ngOnInit() {
+
+  }
 
   getIngredients() {
     return this.ingredients.slice();
@@ -28,4 +33,9 @@ export class ShoppingListService {
     (2) AFTER this.ingredients.push(ingredient) is done pushing this new ingredient to the array, this.ingredients.emit(this.ingredients.slice()), this.ingredientsChanged.emit will emit the UPDATED COPY (with the "new pushed ingredient") of this.ingredients.slice().
     */
   } //replaces onIngredientAdded method in shopping-list.component.ts.
+
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients = [...this.ingredients, ...ingredients];
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
 }

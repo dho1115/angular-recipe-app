@@ -4,7 +4,7 @@
     <hr />
     <ul class="list-group">
       <a class="list-group-item" style="cursor: pointer;" *ngFor="let Ingredient of ingredients">
-        <strong>{{ Ingredient.name }}</strong> : {{ Ingredient.amount }}.
+        <strong [ngStyle]="{color: 'crimson'}">{{ Ingredient.name }}</strong>: {{ Ingredient.amount }}.
       </a>
     </ul>
   </div>
