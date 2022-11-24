@@ -35,7 +35,8 @@ export class ShoppingListService implements OnInit {
   } //replaces onIngredientAdded method in shopping-list.component.ts.
 
   addIngredients(ingredients: Ingredient[]) {
-    this.ingredients = [...this.ingredients, ...ingredients];
+    this.ingredients.push(...ingredients);
+    console.log({ ingredients })
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
 }

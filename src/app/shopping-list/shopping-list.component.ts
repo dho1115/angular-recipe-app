@@ -32,7 +32,6 @@ export class ShoppingListComponent implements OnInit {
 
       this.ingredients = ingredients;
       */
-
     })
   }
 }

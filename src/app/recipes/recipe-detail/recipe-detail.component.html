@@ -14,7 +14,7 @@
         <div class="btn-group" appDropdown> <!-- open class here after btn-group -->
           <button type="button" class="btn btn-danger dropdown-toggle">Manage Recipe <span class="caret"></span></button>
           <ul class="dropdown-menu" >
-            <li><a href="#" (click)="addToList()" >Add To List.</a></li>
+            <li><a (click)="onAddToShoppingList()" [ngStyle]="{cursor: 'pointer'}">Add To List.</a></li>
             <li><a href="#">Edit Recipe.</a></li>
             <li><a href="#">Delete Recipe.</a></li>
           </ul>

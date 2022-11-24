@@ -2,6 +2,9 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 import { Recipe } from '../recipes/recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
+
+//Services.
+import { ShoppingListService } from '../Services/shopping-list.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,9 +20,13 @@ export class RecipeService {
     new Recipe('Ice cold water.', 'Cold, distilled water.', 'https://www.news-medical.net/image.axd?picture=2021%2F7%2Fshutterstock_1548860402.jpg', [new Ingredient ('iced cold distilled water', 1975), new Ingredient('ice', 11975)])
   ];
 
-  constructor() { }
+  constructor(private slService: ShoppingListService) { }
 
   getRecipes() {
     return this.recipes.slice()
+  }
+
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
+    this.slService.addIngredients(ingredients);
   }
 }

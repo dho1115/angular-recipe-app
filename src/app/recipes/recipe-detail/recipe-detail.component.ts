@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 //Services.
-import { ShoppingListService } from '../../Services/shopping-list.service';
+import { RecipeService } from '../../Services/recipe.service';
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
@@ -11,17 +11,14 @@ import { ShoppingListService } from '../../Services/shopping-list.service';
 export class RecipeDetailComponent implements OnInit {
   @Input() recipe: Recipe;
 
-  constructor(private _shoppingListService: ShoppingListService) {
+  constructor(private recipeService: RecipeService) {
   }
 
   ngOnInit(): void {
 
   }
 
-  addToList() {
-    console.log("Will emit the following (below) to shopping-list.component.ts (where it will show up inside shopping-list.component.html).");
-    console.log({ recipe: this.recipe.ingredients });
-    this._shoppingListService.addIngredients([...this.recipe.ingredients]);
-  } //emit recipe to list.
-
+  onAddToShoppingList() {
+    this.recipeService.addIngredientsToShoppingList([...this.recipe.ingredients]) //recipeService is the instance of our RecipeService service. addIngredientsToShoppingList is the method we created inside of that service.
+  }
 }
