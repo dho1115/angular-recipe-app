@@ -3,6 +3,7 @@ import { Directive, HostBinding, HostListener, OnInit, ElementRef } from '@angul
 @Directive({
   selector: '[appDropdown]'
 })
+
 export class DropdownDirective implements OnInit {
   @HostBinding('class.open') isOpen: boolean = false;
   @HostListener("click") toggleOpen() {
@@ -12,7 +13,7 @@ export class DropdownDirective implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
 }
